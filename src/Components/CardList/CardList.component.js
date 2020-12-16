@@ -3,15 +3,28 @@ import Card from '../Card/Card.component';
 import FetchSimpsons from '../../api/Fetch';
 
 class CardList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      monsters: [{ name: 'her' }, { name: 'him' }, { name: 'them' }],
+    };
+  }
   componentDidMount() {
-    FetchSimpsons();
+    this.setState({ data: FetchSimpsons() });
   }
 
   render() {
     return (
       <div>
         CardList Container
-        <Card />
+        {this.state.monsters.map((monsters) => {
+          return (
+            <div>
+              <div>{monsters.name}</div>
+            </div>
+          );
+        })}
+        {/* <Card /> */}
       </div>
     );
   }
