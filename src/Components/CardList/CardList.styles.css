@@ -3,4 +3,5 @@
   flex-wrap: wrap;
   width: 70vw;
   height: 75vw;
+  justify-content: center;
 }

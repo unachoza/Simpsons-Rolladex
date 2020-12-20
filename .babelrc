@@ -1,0 +1,3 @@
+{
+  "plugins": ["transform-react-pug", "transform-react-jsx"]
+}

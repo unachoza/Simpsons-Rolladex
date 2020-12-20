@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  font-family: sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -9,16 +11,17 @@
 }
 
 .main {
-  background-color: #282c34;
+  background-color: #ffdc03;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #d62c68;
 }
 
-.App-link {
-  color: #61dafb;
+.title-img {
+  margin-top: 50px;
+  height: 200px;
 }

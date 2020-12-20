@@ -1,6 +1,6 @@
 .card {
   width: 210px;
-  background-color: grey;
+  background-color: #dad8d8f6;
   padding: 20px;
   align-items: center;
   border: solid;
@@ -16,4 +16,5 @@
 }
 .card:hover {
   transform: scale(1.1);
+  border: rgb(9, 224, 9) solid 3px;
 }
