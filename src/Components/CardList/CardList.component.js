@@ -3,11 +3,12 @@ import Card from '../Card/Card.component';
 import './CardList.styles.css';
 import Loading from '../Loading/Loading.component';
 
-const CardList = ({ simpsons }) => {
+const CardList = (filteredCharacters) => {
+  console.log(filteredCharacters.simpsons);
   return (
     <div className="card-list">
-      {simpsons.length > 0 ? (
-        simpsons.map((simp) => <Card image={simp.image} id={simp.id} character={simp.character} />)
+      {filteredCharacters.simpsons.length > 0 ? (
+        filteredCharacters.simpsons.map((simp) => <Card image={simp.image} id={simp.id} character={simp.character} />)
       ) : (
         <Loading />
       )}

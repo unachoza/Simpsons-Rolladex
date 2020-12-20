@@ -1,7 +1,12 @@
 import React from 'react';
 
-const Search = () => {
-  return <div>Search Bar</div>;
+const SearchBox = ({ onSearchChange }) => {
+  console.log(onSearchChange);
+  return (
+    <div className="pa2">
+      <input type="search" placeholder="search characters" onChange={onSearchChange} />
+    </div>
+  );
 };
 
-export default Search;
+export default SearchBox;

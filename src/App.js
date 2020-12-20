@@ -21,11 +21,15 @@ class App extends Component {
     }
   }
   onSearchChange = (event) => {
-    this.setState({ search: event.target.value });
+    this.setState({ searchInput: event.target.value });
   };
 
   render() {
     const { simpsons, searchInput } = this.state;
+    const filteredCharacters = simpsons.filter((simpson) => {
+      return simpson.character.toLowerCase().includes(searchInput.toLowerCase());
+    });
+    console.log(filteredCharacters);
     return (
       <div className="App">
         <header className="main">
@@ -35,7 +39,7 @@ class App extends Component {
             alt="simpsons title"
           />
           <Search onSearchChange={this.onSearchChange} />
-          <CardList simpsons={simpsons} />
+          <CardList simpsons={filteredCharacters} />
         </header>
       </div>
     );
