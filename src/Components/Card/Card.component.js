@@ -6,7 +6,7 @@ const Card = ({ image, id, character }) => {
     <div key={id} className="card">
       <img src={image} alt="simpsons character" className="card-img" />
       <br />
-      {character}
+      <div className="card-text"> {character}</div>
     </div>
   );
 };

@@ -11,12 +11,14 @@ class App extends Component {
       searchInput: '',
     };
   }
-  componentDidMount() {
-    fetch('https://simpsons-quotes-api.herokuapp.com/quotes?count=10')
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ simpsons: response });
-      });
+  async componentDidMount() {
+    try {
+      const response = await fetch('https://simpsons-quotes-api.herokuapp.com/quotes?count=10');
+      const data = await response.json();
+      this.setState({ simpsons: data });
+    } catch (error) {
+      console.log('there was an error', error);
+    }
   }
   onSearchChange = (event) => {
     this.setState({ search: event.target.value });
@@ -25,9 +27,9 @@ class App extends Component {
     const { simpsons, searchInput } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="main">
           Simpsons Rolladex
-          <Search searchInput={searchInput} />
+          <Search onSearchChange={this.onSearchChange} />
           <CardList simpsons={simpsons} />
         </header>
       </div>
