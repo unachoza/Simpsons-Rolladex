@@ -7,27 +7,51 @@ class CardList extends Component {
     super();
     this.state = {
       monsters: [{ name: 'her' }, { name: 'him' }, { name: 'them' }],
+      simpsons: [],
     };
   }
+
   componentDidMount() {
-    this.setState({ data: FetchSimpsons() });
+    fetch('https://simpsons-quotes-api.herokuapp.com/quotes?count=10')
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({ simpsons: response });
+      });
   }
 
   render() {
+    const { simpsons } = this.state;
     return (
-      <div>
-        CardList Container
-        {this.state.monsters.map((monsters) => {
-          return (
-            <div>
-              <div>{monsters.name}</div>
-            </div>
-          );
-        })}
-        {/* <Card /> */}
-      </div>
+      <ul>
+        {simpsons.length > 0 ? (
+          this.state.simpsons.map((simp) => <li key={simp.id}>{simp.character}</li>)
+        ) : (
+          <div>loading...</div>
+        )}
+      </ul>
     );
   }
 }
+
+//   render() {
+//     const { data } = this.state;
+//     console.log(data, 'hey');
+//     return (
+//       <div>
+//         CardList Container
+//         {data
+//           ? data.map((data) => {
+//               return (
+//                 <div>
+//                   <div>{data.character}</div>
+//                 </div>
+//               );
+//             })
+//           : null}
+//         {/* <Card /> */}
+//       </div>
+//     );
+//   }
+// }
 
 export default CardList;
