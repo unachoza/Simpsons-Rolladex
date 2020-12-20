@@ -1,0 +1,12 @@
+.card {
+  width: 100;
+  background-color: grey;
+  padding: 20px;
+  align-items: center;
+  border: solid;
+  margin: 15px;
+  border-radius: 5px;
+}
+.card-img {
+  height: 200px;
+}

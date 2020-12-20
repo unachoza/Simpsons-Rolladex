@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card.component';
+import './CardList.styles.css';
 import FetchSimpsons from '../../api/Fetch';
 
 class CardList extends Component {
@@ -23,19 +24,13 @@ class CardList extends Component {
     const { simpsons } = this.state;
     console.log(simpsons);
     return (
-      <ul>
+      <div className="card-list">
         {simpsons.length > 0 ? (
-          this.state.simpsons.map((simp) => (
-            <li key={simp.id}>
-              <img src={simp.image} alt="simpsons character" width="80" height="100" />
-              <br />
-              {simp.character}
-            </li>
-          ))
+          this.state.simpsons.map((simp) => <Card image={simp.image} id={simp.id} character={simp.character} />)
         ) : (
           <div>loading...</div>
         )}
-      </ul>
+      </div>
     );
   }
 }
@@ -55,7 +50,6 @@ class CardList extends Component {
 //               );
 //             })
 //           : null}
-//         {/* <Card /> */}
 //       </div>
 //     );
 //   }
