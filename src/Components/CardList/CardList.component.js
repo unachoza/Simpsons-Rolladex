@@ -21,10 +21,17 @@ class CardList extends Component {
 
   render() {
     const { simpsons } = this.state;
+    console.log(simpsons);
     return (
       <ul>
         {simpsons.length > 0 ? (
-          this.state.simpsons.map((simp) => <li key={simp.id}>{simp.character}</li>)
+          this.state.simpsons.map((simp) => (
+            <li key={simp.id}>
+              <img src={simp.image} alt="simpsons character" width="80" height="100" />
+              <br />
+              {simp.character}
+            </li>
+          ))
         ) : (
           <div>loading...</div>
         )}
