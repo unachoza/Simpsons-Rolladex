@@ -3,4 +3,34 @@
   flex-wrap: wrap;
   width: 75vw;
   justify-content: center;
+  margin-top: 14%;
+  margin-left: 18%;
+}
+
+
+@media screen 
+  /* and (min-device-width: 414px)  */
+  and (max-device-width: 836px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .card-list{
+      margin-top: 40%;
+      margin-left: 69%;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .card-list{
+      margin-top: 40%;
+      margin-left: 65%;
+    }
+
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
 }

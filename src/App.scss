@@ -4,11 +4,6 @@
   font-family: sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .main {
   background-color: #ffdc03;
@@ -24,4 +19,30 @@
 .title-img {
   margin-top: 50px;
   height: 200px;
+}
+@media screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .title-img {
+      margin-top: 35px;
+      height: 170px;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {.title-img {
+    margin: 26px 0px;
+    height: 130px;
+  }
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+main{
+  width: 100vw;
+}
 }

@@ -35,6 +35,8 @@ label {
 	transform-style: preserve-3d;
 	transform: translate(-50%, -50%);
 	cursor: pointer;
+  margin: 15px;
+
 }
 
 .flip-card {
@@ -60,12 +62,12 @@ label {
 	transform: rotateX(180deg);
 	color: #000;
   background: #df1ac4d6;
-  height: 230px
+  height: 230px;
+  margin-top: 0px;
 }
 
 label:hover .flip-card {
 	transform: rotateX(2deg);
-	box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
 }
 
 input {

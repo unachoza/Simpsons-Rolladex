@@ -38,6 +38,7 @@ class App extends Component {
             className="title-img"
             alt="simpsons title"
           />
+          <div className="directions">Click card for character quote</div>
           <Search onSearchChange={this.onSearchChange} />
           <CardList simpsons={filteredCharacters} />
         </header>
