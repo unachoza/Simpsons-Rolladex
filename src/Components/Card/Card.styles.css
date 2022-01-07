@@ -1,27 +1,27 @@
 .card {
-  width: 210px;
-  background-color: #dad8d8f6;
-  padding: 20px;
-  align-items: center;
-  border: solid;
-  margin: 15px;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
+	width: 210px;
+	background-color: #dad8d8f6;
+	padding: 20px;
+	align-items: center;
+	border: solid;
+	margin: 15px;
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
 }
 .card-text {
-  width: 200px;
+	width: 200px;
 }
 .card-img {
-  height: 200px;
+	height: 200px;
 }
 .card:hover {
-  transform: scale(1.1);
-  /* border: rgb(9, 224, 9) solid 3px; */
+	transform: scale(1.1);
+	/* border: rgb(9, 224, 9) solid 3px; */
 }
-.card-quote{
-  font-size: 14px;
-  color: black;
-  margin-top: 50%;
+.card-quote {
+	font-size: 14px;
+	color: black;
+	margin-top: 50%;
 }
 
 label {
@@ -35,8 +35,7 @@ label {
 	transform-style: preserve-3d;
 	transform: translate(-50%, -50%);
 	cursor: pointer;
-  margin: 15px;
-
+	margin: 15px;
 }
 
 .flip-card {
@@ -51,8 +50,7 @@ label {
 .flip-card .front,
 .flip-card .back {
 	position: absolute;
-	/* width: 100%; */
-	/* height: 100%; */
+	height: 265px;
 	text-align: center;
 	backface-visibility: hidden;
 	border-radius: 0 20px 0 20px;
@@ -61,9 +59,9 @@ label {
 .flip-card .back {
 	transform: rotateX(180deg);
 	color: #000;
-  background: #df1ac4d6;
-  height: 230px;
-  margin-top: 0px;
+	background: #df1ac4d6;
+	height: 265px;
+	margin-top: -25px;
 }
 
 label:hover .flip-card {
