@@ -20,8 +20,9 @@ a #button {
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 100px;
-  margin-top: 10px;
+  box-shadow: 5px 5px 24px -3px #d62c68;
+  /* margin-bottom: 100px; */
+  /* margin-top: 10px; */
 }
 div.button:hover {
   transform: translateY(-3px);
