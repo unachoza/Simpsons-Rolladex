@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CardList from './Components/CardList/CardList.component';
 import Search from './Components/Search/Search.component';
+import Loading from './Components/Loading/Loading.component'
+import Button from './Components/Button/Button.component';
 import './App.scss';
 
 class App extends Component {
@@ -11,7 +13,7 @@ class App extends Component {
       searchInput: '',
     };
   }
-  async componentDidMount() {
+   fetchData = async () => {
     try {
       const response = await fetch('https://simpsons-quotes-api.herokuapp.com/quotes?count=9');
       const data = await response.json();
@@ -19,6 +21,9 @@ class App extends Component {
     } catch (error) {
       console.log('there was an error', error);
     }
+  }
+  componentDidMount() {
+    this.fetchData()
   }
   onSearchChange = (event) => {
     this.setState({ searchInput: event.target.value });
@@ -40,7 +45,8 @@ class App extends Component {
           />
           <div className="directions">Click card for character quote</div>
           <Search onSearchChange={this.onSearchChange} />
-          <CardList simpsons={filteredCharacters} />
+          {filteredCharacters.length < 1 ? <Loading /> : <CardList simpsons={filteredCharacters} />}
+          <Button text={"Load More"} onClick={() => console.log(filteredCharacters)} />
         </header>
       </div>
     );
