@@ -1,0 +1,19 @@
+.input {
+  padding: 15px;
+  font-size: 19px;
+  margin: 5px;
+}
+.directions {
+  margin-top: 40px;
+  height: 20px;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .directions {
+      margin-top: 0px;
+      height: 40px;
+    }
+}
