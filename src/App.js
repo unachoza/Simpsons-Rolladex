@@ -34,7 +34,6 @@ class App extends Component {
     const filteredCharacters = simpsons.filter((simpson) => {
       return simpson.character.toLowerCase().includes(searchInput.toLowerCase());
     });
-    console.log(filteredCharacters);
     return (
       <div className="App">
         <header className="main">
