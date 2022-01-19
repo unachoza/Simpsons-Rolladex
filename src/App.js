@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardList from './Components/CardList/CardList.component';
 import Search from './Components/Search/Search.component';
+import Loading from './Components/Loading/Loading.component'
 import './App.scss';
 
 class App extends Component {
@@ -40,7 +41,7 @@ class App extends Component {
           />
           <div className="directions">Click card for character quote</div>
           <Search onSearchChange={this.onSearchChange} />
-          <CardList simpsons={filteredCharacters} />
+          {filteredCharacters.length < 1 ? <Loading /> :<CardList simpsons={filteredCharacters} />}
         </header>
       </div>
     );
