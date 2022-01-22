@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card.component';
 import './CardList.styles.css';
-import Loading from '../Loading/Loading.component';
 
 const CardList = (filteredCharacters) => {
   return (
