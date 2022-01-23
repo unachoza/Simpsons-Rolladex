@@ -5,10 +5,6 @@ input#search {
   margin: 5px;
   display: inline-block;
 }
-.directions {
-  margin-top: 40px;
-  height: 20px;
-}
 
 @media only screen 
   and (min-device-width: 320px) 
