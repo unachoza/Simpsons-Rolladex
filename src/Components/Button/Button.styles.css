@@ -21,7 +21,6 @@ a #button {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 5px 5px 24px -3px #d62c68;
-  margin-top: -100px;
   margin-bottom: 50px;
 }
 div.button:hover {

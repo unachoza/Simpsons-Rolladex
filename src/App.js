@@ -37,7 +37,7 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <header className="main">
+        <div className="main">
           <img
             src="https://i.pinimg.com/originals/73/1a/c7/731ac71d0aa7302e232087e7a998b04e.jpg"
             className="title-img"
@@ -47,7 +47,7 @@ class App extends Component {
           <Search onSearchChange={this.onSearchChange} />
           {filteredCharacters.length < 1 ? <Loading /> : <CardList simpsons={filteredCharacters} />}
             <Button text={"Load More"} onClick={() => this.fetchData()} />
-        </header>
+        </div>
       </div>
     );
   }
