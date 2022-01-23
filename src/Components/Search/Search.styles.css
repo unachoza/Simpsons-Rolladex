@@ -1,11 +1,9 @@
-.input {
+
+input#search {
   padding: 15px;
   font-size: 19px;
   margin: 5px;
-}
-.directions {
-  margin-top: 40px;
-  height: 20px;
+  display: inline-block;
 }
 
 @media only screen 

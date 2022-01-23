@@ -17,7 +17,7 @@ class App extends Component {
     try {
       const response = await fetch("https://simpsons-quotes-api.herokuapp.com/quotes?count=9");
       const data = await response.json();
-      this.setState({ simpsons: data });
+      this.setState({ simpsons: this.state.simpsons.concat([...data])});
     } catch (error) {
       console.log("there was an error", error);
     }
@@ -28,8 +28,9 @@ class App extends Component {
   onSearchChange = (event) => {
     this.setState({ searchInput: event.target.value });
   };
-
+  
   render() {
+    console.log(this.state)
     const { simpsons, searchInput } = this.state;
     const filteredCharacters = simpsons.filter((simpson) => {
       return simpson.character.toLowerCase().includes(searchInput.toLowerCase());
@@ -42,12 +43,10 @@ class App extends Component {
             className="title-img"
             alt="simpsons title"
           />
-          <div className="button-container">
             <div className="directions">Click card for character quote</div>
-            <Button text={"Load More"} onClick={() => this.fetchData()} />
-          </div>
           <Search onSearchChange={this.onSearchChange} />
           {filteredCharacters.length < 1 ? <Loading /> : <CardList simpsons={filteredCharacters} />}
+            <Button text={"Load More"} onClick={() => this.fetchData()} />
         </header>
       </div>
     );
